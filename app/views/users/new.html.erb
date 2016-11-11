@@ -1,0 +1,33 @@
+<center><h1>Sign up</h1></center>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <div class="well">
+<%= form_for :user do |f| %>
+
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, class: "form-control" %>
+
+    <%= f.label :last_name %>
+  <%= f.text_field :last_name, class: "form-control" %>
+
+  <%= f.label :user_name %>
+  <%= f.text_field :user_name, class: "form-control" %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, class: "form-control" %>
+
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number, class: "form-control" %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: "form-control" %>
+
+  <%= f.label :password_confirmation, "Confirm password" %>
+  <%= f.password_field :password_confirmation, class: "form-control" %><br>
+
+  <center><%= f.submit "Create my account", class: "btn btn-primary" %></center>
+<% end %>
+</div>
+</div>
+</div>
