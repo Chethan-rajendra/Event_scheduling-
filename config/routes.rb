@@ -1,18 +1,17 @@
 Rails.application.routes.draw do
 
-
-
-  get 'sessions/new'
-
   root 'static_pages#home'
+
   get '/users/new' => 'users#new', :as => "new_user"
    post '/users/new' => 'users#create', :as => "user"
 
    get '/login' => 'sessions#new', as: :login
-  post '/login' => 'events#new'
-    get 'events/new' => 'events#new', as: :event
+   post '/login' => 'sessions#create', as: :create_event
 
-    get 'events/show' => 'events#show', as: :events
+    get '/events/new' => 'events#new', as: :event
+    post '/events/new' => 'events#create', as: :event_create 
+
+    # get 'events/show' => 'events#show', as: :events
    
   # resources :users
 
