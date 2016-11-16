@@ -41,8 +41,8 @@
       <%= f.time_select :time, class: "form-control"%>
       </div>
       <br>
-
-<%= f.fields_for :participants do |e|%>
+       <%= f.label :participants %><br>
+       <%= f.fields_for :participants do |e|%>
         <% User.all.each do |d|%>
         <%= check_box_tag "invite[]", d.id%>
         <%= d.first_name %><br>
