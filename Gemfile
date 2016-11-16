@@ -8,8 +8,9 @@ gem 'rails', '4.2.7.1'
 gem 'pg', '~> 0.18.4'
 
 gem 'pry'
-gem 'bootstrap-sass', '3.3.6'
+
 gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5'
+gem 'bootstrap-sass', '3.3.6'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

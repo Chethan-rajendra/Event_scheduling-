@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>EventScheduling</title>
+  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -10,9 +12,8 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
         <%= image_tag("logo.jpg", :size => "75x75",:alt => "image_not_loading") %>
-       
           <ul class="nav navbar-nav navbar-right">
-         
+           <li><h2 class="heading"><%= link_to "Event Scheduling", root_path %></h2></li>
             <li><%= link_to "Home",   root_path %></li>
             <li><%= link_to "Signup",   new_user_path %></li>
             <!--  -->
@@ -32,11 +33,14 @@
 <%= yield %>
 <br><br><br>
 <footer class="footer">
- <small>
-   <a href="">Event Handling</a>
+ <div class="well">
+ <small><center>
+   <a href="">Event Scheduling</a>
  </small>
  <br>
- <p> All copyrights © reserved by Qwinix</p>
+ <p> All copyrights © reserved by Qwinix</p></center>
+ </div>
 </footer>
 </body>
 </html>
+

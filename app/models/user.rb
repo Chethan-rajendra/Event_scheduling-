@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
 
-   has_many :event_as_host
-   has_many :invites
-   has_many :event_as_guest, through: :invites
+   has_many :events_as_host, foreign_key: :host_id, class_name: "Event"
+   
 
    validates :first_name, presence: { message: "must be given please" }
    validates :last_name, presence: {message: "not be blank"}

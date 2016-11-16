@@ -1,0 +1,91 @@
+<br>
+<span style="float: right">
+<%= link_to 'Create New Event ', new_event_path(user_id: current_user), "class" => "btn btn-primary"  %>
+<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= image_tag("logo.jpg", :size => "75x75",:alt => "image_not_loading") %>
+     
+          <ul class="nav navbar-nav navbar-right">
+           
+            <li><%= link_to "Home",   root_path %></li>
+            <li><%= link_to "Signup",   new_user_path %></li>
+            <!--  -->
+
+            <li><%= link_to "log out", login_path%></li>
+            
+          </ul>
+        
+      </div>
+    </header>
+
+</span><br><br><br>
+
+
+<!-- =================================== -->
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+</div>
+
+<div class="container">
+
+<% @events.each do |e| %>
+
+
+
+     
+ 
+<div class="well">
+ <strong>Event : </strong><%= link_to e.title, '#' %><br>
+ <strong>Organiser :</strong><%= User.find(e.host_id).first_name%>
+
+
+<br>
+
+<a href="#" data-toggle="modal" data-target="#myModal-<%= e.id%>">Participents</a><br><br>
+<%= link_to 'Edit Event ', edit_event_path(e),"class" => "btn btn-primary"  %>
+<%= link_to 'Delete Event ', delete_event_path(e) ,"class" => "btn btn-primary"  %>
+<div class="status">
+<% if e.status==nil %>
+<div>
+<span class="green-back white-color">open</span>
+</div> <%else %>
+<div>
+<span class="red-back white-color">open</span>
+</div>  
+<% end %>
+</div>    
+<div class="container"> <!-- Modal -->
+<div class="modal fade" id="myModal-<%= e.id%>" role="dialog">
+<div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Event : <%= e.title  %> </h4>
+    </div>
+    <div class="modal-body">
+   <div class="container">
+         <div class="form-group">
+<div class="col-md-4">
+<% e.invites.each do |user|%>
+  <%= User.find(user).first_name%>
+  <% end %>
+     
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+ 
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+         <% end %>
+</div>
+
+

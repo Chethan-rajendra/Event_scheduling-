@@ -1,0 +1,28 @@
+.footer {
+	font-size: 15px;
+}
+
+.heading
+{
+font-size: 30px;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}

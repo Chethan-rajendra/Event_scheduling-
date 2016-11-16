@@ -16,12 +16,13 @@
         
       </div>
     </header>
-<center><h1>Create new event</h1></center>
+<center><h1>Edit event</h1></center>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
   <div class="well">
-    <%= form_for :event, url: event_create_path(current_user) do |f| %>
+  <% if current_user.id==@event.host_id %>
+    <%= form_for :event, url: update_event_path(@event) do |f| %>
      
 
       <%= f.label :title %>
@@ -41,24 +42,17 @@
       <%= f.time_select :time, class: "form-control"%>
       </div>
       <br>
-
-<%= f.fields_for :participants do |e|%>
-        <% User.all.each do |d|%>
-        <%= check_box_tag "invite[]", d.id%>
-        <%= d.first_name %><br>
-
-        <% end %>
-        <% end %>
-        <br>
       <%= f.label :status %>
       <%= f.select :status, [ 'Open', 'Close']%>
      
    <br>
    <br>
    <span style="padding-left: 230px">
-      <%= f.submit "Create event", class: "btn btn-primary"%></span>
+      <%= f.submit "update event", class: "btn btn-primary"%></span>
     <% end %>
   </div>
   </div>
 </div>
+<% end %>
+<!-- ============================== -->
 

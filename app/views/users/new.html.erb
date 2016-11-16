@@ -6,24 +6,24 @@
 <%= form_for :user do |f| %>
 
   <%= f.label :first_name %>
-  <%= f.text_field :first_name, class: "form-control" %>
+  <%= f.text_field :first_name, class: "form-control", required: true %>
 
     <%= f.label :last_name %>
-  <%= f.text_field :last_name, class: "form-control" %>
+  <%= f.text_field :last_name, class: "form-control", required: true %>
 
   <%= f.label :user_name %>
-  <%= f.text_field :user_name, class: "form-control" %>
+  <%= f.text_field :user_name, class: "form-control", required: true %>
 
   <%= f.label :email %>
-  <%= f.email_field :email, class: "form-control" %>
+  <%= f.email_field :email, class: "form-control", required: true %>
 
   <%= f.label :phone_number %>
-  <%= f.text_field :phone_number, class: "form-control" %>
+  <%= f.text_field :phone_number, class: "form-control", required: true %>
 
   <%= f.label :password %>
-  <%= f.password_field :password, class: "form-control" %>
+  <%= f.password_field :password, class: "form-control", required: true %>
 
-  <%= f.label :password_confirmation, "Confirm password" %>
+  <%= f.label :password_confirmation, "Confirm password", required: true %>
   <%= f.password_field :password_confirmation, class: "form-control" %><br>
 
   <center><%= f.submit "Create my account", class: "btn btn-primary" %></center>
